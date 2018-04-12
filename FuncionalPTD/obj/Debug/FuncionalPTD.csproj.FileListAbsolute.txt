@@ -1,0 +1,2 @@
+C:\Users\Владимир\source\repos\PTDProject\FuncionalPTD\obj\Debug\FuncionalPTD.csprojResolveAssemblyReference.cache
+C:\Users\Владимир\source\repos\PTDProject\FuncionalPTD\obj\Debug\FuncionalPTD.csproj.CoreCompileInputs.cache

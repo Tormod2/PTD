@@ -14,18 +14,6 @@ namespace FuncionalPTD.FunctionalClasses
     /// </summary>
     public class FileManager
     {
-        //singleton
-        static FileManager manager;
-
-        private FileManager() { }
-
-        public static FileManager getFileManager()
-        {
-            if (manager == null)
-                manager = new FileManager();
-            return manager;
-        }
-
 
         /// <summary>
         /// путь текущего корневого каталога

@@ -15,6 +15,6 @@ namespace FuncionalPTD.FunctionalInterfaces.Behaviors
         /// метод нахождения названия компании в файле
         /// </summary>
         /// <returns></returns>
-        string FindTitle(string path);
+        string FindTitle(string path, int index);
     }
 }

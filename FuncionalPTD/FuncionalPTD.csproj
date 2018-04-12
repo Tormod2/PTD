@@ -41,10 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FunctionalClasses\AddCASExcelFile.cs" />
+    <Compile Include="FunctionalClasses\CASExcelParserContr.cs" />
+    <Compile Include="FunctionalClasses\CASExcelParserSubcontr.cs" />
+    <Compile Include="FunctionalClasses\ContrWorkMaker.cs" />
+    <Compile Include="FunctionalClasses\DefaultExcelFindAllocMoney.cs" />
     <Compile Include="FunctionalClasses\FileManager.cs" />
-    <Compile Include="FunctionalClasses\FindExcelTitleContractor.cs" />
+    <Compile Include="FunctionalClasses\FindExcelPeriodListContr.cs" />
+    <Compile Include="FunctionalClasses\FindExcelPeriodListSubcontr.cs" />
+    <Compile Include="FunctionalClasses\FindExcelTitleContr.cs" />
+    <Compile Include="FunctionalClasses\FindExcelTitleSubcontr.cs" />
+    <Compile Include="FunctionalClasses\SubcontrWorkMaker.cs" />
     <Compile Include="FunctionalInterfaces\Behaviors\AddCASFileBehavior.cs" />
+    <Compile Include="FunctionalInterfaces\Behaviors\FindAllocMoneyBehavior.cs" />
+    <Compile Include="FunctionalInterfaces\Behaviors\FindPeriodListBehavior.cs" />
     <Compile Include="FunctionalInterfaces\Behaviors\FindTitleBehavior.cs" />
+    <Compile Include="FunctionalInterfaces\ICASParser.cs" />
+    <Compile Include="FunctionalInterfaces\IWorkInfoMaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

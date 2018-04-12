@@ -1,0 +1,7 @@
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\PTDProject.exe.config
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\PTDProject.exe
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\PTDProject.pdb
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.csprojResolveAssemblyReference.cache
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.csproj.CoreCompileInputs.cache
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.exe
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.pdb

@@ -1,0 +1,6 @@
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\DomainPTD.dll
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\DomainPTD.pdb
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.csprojResolveAssemblyReference.cache
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.csproj.CoreCompileInputs.cache
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.dll
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.pdb

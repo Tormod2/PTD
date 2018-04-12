@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainPTD.DomainInterfaces
+namespace DomainPTD.DomainClasses
 {
     /// <summary>
     /// класс, описывающий информацию о сроках работы

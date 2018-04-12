@@ -8,15 +8,15 @@ using FuncionalPTD.FunctionalInterfaces.Behaviors;
 namespace FuncionalPTD.FunctionalClasses
 {
     /// <summary>
-    /// класс нахождения названия компании в файле
+    /// класс нахождения названия компании в Excel-файле субподрядчика
     /// </summary>
-    public class FindExcelTitleContractor : FindTitleBehavior
+    public class FindExcelTitleSubcontr : FindTitleBehavior
     {
         /// <summary>
-        /// метод нахождения названия компании в файле
+        /// метод нахождения названия компании в Excel-файле субподрядчика
         /// </summary>
         /// <returns></returns>
-        public string FindTitle(string path)
+        public string FindTitle(string path, int index)
         {
             return "";
         }
