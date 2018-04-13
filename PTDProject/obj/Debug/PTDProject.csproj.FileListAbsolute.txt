@@ -5,3 +5,7 @@ C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProjec
 C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.csproj.CoreCompileInputs.cache
 C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.exe
 C:\Users\Владимир\source\repos\PTDProject\PTDProject\obj\Debug\PTDProject.pdb
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\FuncionalPTD.dll
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\DomainPTD.dll
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\FuncionalPTD.pdb
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\DomainPTD.pdb

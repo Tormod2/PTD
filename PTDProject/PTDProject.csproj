@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FuncionalPTD\FuncionalPTD.csproj">
+      <Project>{752aaa97-e9f2-45e0-8fb1-b6883da957fe}</Project>
+      <Name>FuncionalPTD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

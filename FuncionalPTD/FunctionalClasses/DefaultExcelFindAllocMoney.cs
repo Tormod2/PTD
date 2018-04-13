@@ -14,7 +14,7 @@ namespace FuncionalPTD.FunctionalClasses
     {
         public string AllocMoney(string path, string workTitle)
         {
-            return 0;
+            return "";
         }
     }
 }
