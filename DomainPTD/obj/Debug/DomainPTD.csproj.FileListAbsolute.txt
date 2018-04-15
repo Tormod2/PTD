@@ -4,3 +4,8 @@ C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.
 C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.csproj.CoreCompileInputs.cache
 C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.dll
 C:\Users\Владимир\source\repos\PTDProject\DomainPTD\obj\Debug\DomainPTD.pdb
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\DomainPTD.dll.config
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\EntityFramework.dll
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\EntityFramework.xml
+C:\Users\Владимир\source\repos\PTDProject\DomainPTD\bin\Debug\EntityFramework.SqlServer.xml

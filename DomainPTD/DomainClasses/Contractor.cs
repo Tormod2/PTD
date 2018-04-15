@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainPTD.DomainInterfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace DomainPTD.DomainClasses
 {
@@ -16,5 +17,10 @@ namespace DomainPTD.DomainClasses
         /// название компании генподрядчика
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// список всех работ
+        /// </summary>
+        public List<Work> WorkList { get; set; }
+            = new List<Work>();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace DomainPTD.DomainClasses
 {
@@ -14,7 +15,7 @@ namespace DomainPTD.DomainClasses
         /// <summary>
         /// дата срока
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = new DateTime();
         /// <summary>
         /// деньги, потраченные за срок
         /// </summary>

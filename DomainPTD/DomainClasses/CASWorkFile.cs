@@ -20,5 +20,6 @@ namespace DomainPTD.DomainClasses
         /// список всех работ
         /// </summary>
         public List<Work> WorkList { get; set; }
+            = new List<Work>();
     }
 }

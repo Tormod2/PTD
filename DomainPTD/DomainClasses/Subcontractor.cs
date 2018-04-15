@@ -16,5 +16,10 @@ namespace DomainPTD.DomainClasses
         /// название компании генподрядчика
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// список всех работ
+        /// </summary>
+        public List<Work> WorkList { get; set; }
+            = new List<Work>();
     }
 }

@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,13 +49,18 @@
   <ItemGroup>
     <Compile Include="DomainClasses\CASWorkFile.cs" />
     <Compile Include="DomainClasses\Contractor.cs" />
+    <Compile Include="DomainClasses\ContrWorkFile.cs" />
     <Compile Include="DomainClasses\Subcontractor.cs" />
+    <Compile Include="DomainClasses\SubcontrWorkFile.cs" />
     <Compile Include="DomainClasses\Work.cs" />
     <Compile Include="DomainInterfaces\IWorker.cs" />
     <Compile Include="DomainClasses\Period.cs" />
     <Compile Include="DomainInterfaces\IWorkFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

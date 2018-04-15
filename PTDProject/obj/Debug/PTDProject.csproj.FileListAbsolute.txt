@@ -9,3 +9,9 @@ C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\Funcional
 C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\DomainPTD.dll
 C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\FuncionalPTD.pdb
 C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\DomainPTD.pdb
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\EntityFramework.dll
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\FuncionalPTD.dll.config
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\EntityFramework.xml
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Владимир\source\repos\PTDProject\PTDProject\bin\Debug\DomainPTD.dll.config
