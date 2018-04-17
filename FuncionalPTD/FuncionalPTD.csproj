@@ -58,6 +58,7 @@
     <Compile Include="FunctionalClasses\FindExcelPeriodListSubcontr.cs" />
     <Compile Include="FunctionalClasses\FindExcelTitleContr.cs" />
     <Compile Include="FunctionalClasses\FindExcelTitleSubcontr.cs" />
+    <Compile Include="FunctionalClasses\Serializer.cs" />
     <Compile Include="FunctionalClasses\SubcontrWorkMaker.cs" />
     <Compile Include="FunctionalInterfaces\Behaviors\AddCASFileBehavior.cs" />
     <Compile Include="FunctionalInterfaces\Behaviors\FindAllocMoneyBehavior.cs" />

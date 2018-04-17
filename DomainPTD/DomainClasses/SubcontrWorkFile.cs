@@ -10,17 +10,13 @@ namespace DomainPTD.DomainClasses
     /// <summary>
     /// Класс, описывающий файл с работой субподрядчика
     /// </summary>
+    [Serializable]
     public class SubcontrWorkFile : IWorkFile
     {
         /// <summary>
         /// Путь к файлу
         /// </summary>
         public string Path { get; set; }
-        /// <summary>
-        /// Экземпляр класса субподрядчика
-        /// </summary>
-        public Subcontractor Subcontr { get; set; }
-            = new Subcontractor();
 
         public override string ToString()
         {

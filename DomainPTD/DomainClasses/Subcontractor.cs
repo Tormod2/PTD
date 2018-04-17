@@ -10,6 +10,7 @@ namespace DomainPTD.DomainClasses
     /// <summary>
     /// класс, описывающий данные субподрядчика
     /// </summary>
+    [Serializable]
     public class Subcontractor : IWorker
     {
         /// <summary>
