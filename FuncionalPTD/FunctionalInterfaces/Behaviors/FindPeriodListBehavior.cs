@@ -17,6 +17,6 @@ namespace FuncionalPTD.FunctionalInterfaces.Behaviors
         /// <param name="path"></param>
         /// /// <param name="workTitle"></param>
         /// <returns></returns>
-        List<string> FindPeriodList(string path, string workTitle);
+        List<string> FindPeriodList(string path, int index);
     }
 }

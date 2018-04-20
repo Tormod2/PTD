@@ -14,8 +14,6 @@ namespace PTDProject
             FileManager manager = new FileManager();
             manager.OpenGeneralFolder(@"C:\Users\Владимир\Desktop\newFolder");
             manager.OpenProject("newFolder");
-            //manager.CreateGeneralFolder(@"C:\Users\Владимир\Desktop", "newFolder");
-            //manager.CreateProject("newFolder");
             manager.AddContractor(@"C:\Users\Владимир\Desktop\перемещаемый.txt");
             manager.AddSubcontractor(@"C:\Users\Владимир\Desktop\перемещаемый.txt");
             manager.Serialize();

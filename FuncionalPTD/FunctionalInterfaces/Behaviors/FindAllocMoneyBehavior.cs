@@ -17,6 +17,6 @@ namespace FuncionalPTD.FunctionalInterfaces.Behaviors
         /// <param name="path"></param>
         /// <param name="workTitle"></param>
         /// <returns></returns>
-        string AllocMoney(string path, string workTitle);
+        string FindAllocMoney(string path, int index);
     }
 }

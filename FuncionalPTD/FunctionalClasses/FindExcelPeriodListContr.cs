@@ -16,7 +16,7 @@ namespace FuncionalPTD.FunctionalClasses
         /// метод нахождения периодов в Excel файле генподрядчика
         /// </summary>
         /// <param name="path"></param>
-        public List<string> FindPeriodList(string path, string workTitle)
+        public List<string> FindPeriodList(string path, int index)
         {
             return new List<string>();
         }

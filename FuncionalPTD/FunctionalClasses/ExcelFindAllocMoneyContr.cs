@@ -8,11 +8,11 @@ using FuncionalPTD.FunctionalInterfaces.Behaviors;
 namespace FuncionalPTD.FunctionalClasses
 {
     /// <summary>
-    /// класс нахождения выделенных на работу денег
+    /// класс нахождения выделенных на работу денег генподрядчика
     /// </summary>
-    public class DefaultExcelFindAllocMoney : FindAllocMoneyBehavior
+    public class ExcelFindAllocMoneyContr : FindAllocMoneyBehavior
     {
-        public string AllocMoney(string path, string workTitle)
+        public string FindAllocMoney(string path, int index)
         {
             return "";
         }

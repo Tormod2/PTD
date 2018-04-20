@@ -21,7 +21,7 @@ namespace FuncionalPTD.FunctionalClasses
         {
             FindTitleBehavior = new FindExcelTitleContr();
             FindPeriodListBehavior = new FindExcelPeriodListContr();
-            FindAllocMoneyBehavior = new DefaultExcelFindAllocMoney();
+            FindAllocMoneyBehavior = new ExcelFindAllocMoneyContr();
         }
 
         /// <summary>
