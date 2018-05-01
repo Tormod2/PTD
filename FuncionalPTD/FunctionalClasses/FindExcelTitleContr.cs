@@ -17,14 +17,11 @@ namespace FuncionalPTD.FunctionalClasses
         /// метод нахождения названия компании в Excel-файле генподрядчика
         /// </summary>
         /// <returns></returns>
-        Excel.Application TempImportExcel;
-        Excel.Workbook TempWoorkBook;
-        Excel.Worksheet TempWorkSheet;
         public string FindTitle(string path, int index)
         {
-            TempImportExcel = new Excel.Application();
-            TempWoorkBook = TempImportExcel.Application.Workbooks.Open(path);
-            TempWorkSheet = TempWoorkBook.Worksheets.get_Item(1);
+            Excel.Application TempImportExcel = new Excel.Application(); ;
+            Excel.Workbook TempWoorkBook = TempImportExcel.Application.Workbooks.Open(path);
+            Excel.Worksheet TempWorkSheet = TempWoorkBook.Worksheets.get_Item(1);
             TempImportExcel.DisplayAlerts = false;
 
             int WorkIndex = 3;

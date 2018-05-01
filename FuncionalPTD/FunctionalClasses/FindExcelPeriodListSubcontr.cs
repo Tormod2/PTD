@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FuncionalPTD.FunctionalInterfaces.Behaviors;
+using DomainPTD.DomainClasses;
 
 namespace FuncionalPTD.FunctionalClasses
 {
@@ -16,9 +17,9 @@ namespace FuncionalPTD.FunctionalClasses
         /// метод нахождения периодов в Excel файле субподрядчика
         /// </summary>
         /// <param name="path"></param>
-        public List<string> FindPeriodList(string path, int index)
+        public List<Period> FindPeriodList(string path, int index)
         {
-            return new List<string>();
+            return new List<Period>();
         }
     }
 }
