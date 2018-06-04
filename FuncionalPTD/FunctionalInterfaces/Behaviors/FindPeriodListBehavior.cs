@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainPTD.DomainClasses;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace FuncionalPTD.FunctionalInterfaces.Behaviors
 {
@@ -18,6 +19,6 @@ namespace FuncionalPTD.FunctionalInterfaces.Behaviors
         /// <param name="path"></param>
         /// /// <param name="workTitle"></param>
         /// <returns></returns>
-        List<Period> FindPeriodList(string path, int index);
+        List<Period> FindPeriodList(Excel.Application TempImportExcel, int index);
     }
 }

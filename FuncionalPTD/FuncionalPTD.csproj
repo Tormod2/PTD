@@ -51,12 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FunctionalClasses\AddCASExcelFile.cs" />
-    <Compile Include="FunctionalClasses\ExcelFindAllocMoneySubcontr.cs" />
+    <Compile Include="FunctionalClasses\FindExcelAllocMoneySubcontr.cs" />
     <Compile Include="FunctionalClasses\FileManagerContext.cs" />
     <Compile Include="FunctionalClasses\CASExcelParserContr.cs" />
     <Compile Include="FunctionalClasses\CASExcelParserSubcontr.cs" />
     <Compile Include="FunctionalClasses\ContrWorkMaker.cs" />
-    <Compile Include="FunctionalClasses\ExcelFindAllocMoneyContr.cs" />
+    <Compile Include="FunctionalClasses\FindExcelAllocMoneyContr.cs" />
     <Compile Include="FunctionalClasses\FileManager.cs" />
     <Compile Include="FunctionalClasses\FindExcelPeriodListContr.cs" />
     <Compile Include="FunctionalClasses\FindExcelPeriodListSubcontr.cs" />

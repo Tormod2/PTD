@@ -19,6 +19,6 @@ namespace DomainPTD.DomainClasses
         /// <summary>
         /// деньги, потраченные за срок
         /// </summary>
-        public decimal Money { get; set; }
+        public decimal? Money { get; set; }
     }
 }

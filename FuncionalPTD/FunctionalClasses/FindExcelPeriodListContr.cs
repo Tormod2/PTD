@@ -32,87 +32,107 @@ namespace FuncionalPTD.FunctionalClasses
                 "декабрь", "дек"
             };
 
-        private Excel.Application TempImportExcel;
-        private Excel.Workbook TempWoorkBook;
-        private Excel.Worksheet TempWorkSheet;
+        private Excel.Application TempImportExcel { get; set; }
+
+        private int CountingColumn { get; set; }
+        private int CountingLine { get; set; }
+        private List<DateTime> PeriodsList { get; set; }
+        private List<int> ColumnsPeriodsList { get; set; }
+        private List<int> DeletedIndexes { get; set; }
+            = new List<int>();
 
         /// <summary>
-        /// метод нахождения периодов в Excel файле генподрядчика
+        /// метод нахождения периодов в Excel файле субподрядчика
         /// </summary>
         /// <param name="path"></param>
-        public List<Period> FindPeriodList(string path, int index)
+        public List<Period> FindPeriodList(Excel.Application TempImportExcel, int index)
         {
-            TempImportExcel = new Excel.Application(); ;
-            TempWoorkBook = TempImportExcel.Application.Workbooks.Open(path);
-            TempWorkSheet = TempWoorkBook.Worksheets.get_Item(1);
-            TempImportExcel.DisplayAlerts = false;
-
-            int CountingColumn = 2;
-            int CountingPeriodLine = 1;
-            int CountingMoneyLine;
-
-            while (TempWorkSheet.Cells[CountingPeriodLine + 1, CountingColumn].Text != "1")
-                CountingPeriodLine++;
-
-            CountingMoneyLine = CountingPeriodLine + 2;
-
-            while (TempWorkSheet.Cells[CountingMoneyLine + 1, CountingColumn].Text != "1")
-                CountingMoneyLine++;
-
-            List<DateTime> resultDateList = new List<DateTime>();
-            List<decimal> resultMoneyList = new List<decimal>();
-
-            for (int i = 0; findCell(CountingPeriodLine, CountingColumn + i).Value != null;
-                i ++)
+            if (PeriodsList == null)
             {
-                int month = findMounth(findCell(CountingPeriodLine, CountingColumn + i));
-                if (month > 0)
-                {
-                    int year = findYear(findCell(CountingPeriodLine, CountingColumn + i));
-                    resultDateList.Add(new DateTime(year, month, 1));
+                if (this.TempImportExcel == null)
+                    this.TempImportExcel = TempImportExcel;
+                Excel.Range startRange = findLeftTopCell();
+                CountingLine = startRange.Row;
+                CountingColumn = startRange.Column;
 
-                    if (TempWorkSheet.Cells[CountingMoneyLine + index, CountingColumn + i].Value != null)
-                        resultMoneyList.Add(
-                            (decimal)TempWorkSheet.Cells[CountingMoneyLine + index, CountingColumn + i].Value);
-                    else resultMoneyList.Add(0);
+                CreatePeriodList();
+
+                for (int i = 1; i < PeriodsList.Count; i++)
+                {
+                    if (PeriodsList[i].Year == PeriodsList[i - 1].Year
+                        && PeriodsList[i].Month == PeriodsList[i - 1].Month)
+                    {
+                        PeriodsList.RemoveAt(i - 1);
+                        DeletedIndexes.Add(i - 1);
+                        i--;
+                    }
                 }
             }
 
-            for (int i = 1; i < resultDateList.Count; i++)
+            int CountingMoneyLine = CountingLine + 1;
+
+            while (TempImportExcel.Cells[CountingMoneyLine + 1, CountingColumn].Text != "1")
+                CountingMoneyLine++;
+
+            List<decimal> moneyList = new List<decimal>();
+
+            for (int i = ColumnsPeriodsList.First(); i <= ColumnsPeriodsList.Last(); i++)
             {
-                if (resultDateList[i].Year == resultDateList[i - 1].Year
-                    && resultDateList[i].Month == resultDateList[i - 1].Month)
+                if (ColumnsPeriodsList.Contains(i))
                 {
-                    resultMoneyList[i] += resultMoneyList[i - 1];
-                    resultDateList.RemoveAt(i - 1);
-                    resultMoneyList.RemoveAt(i - 1);
+                    if (TempImportExcel.Cells[CountingMoneyLine + index, i].Value != null)
+                        moneyList.Add((decimal)TempImportExcel.Cells[CountingMoneyLine + index, i].Value);
+                    else
+                        moneyList.Add(0);
+                }
+            }
+
+            List<int> tempList = new List<int>();
+            tempList.AddRange(DeletedIndexes);
+            for (int i = 1; i < moneyList.Count; i++)
+            {
+                if (tempList.Contains(i - 1))
+                {
+                    moneyList[i] += moneyList[i - 1];
+                    moneyList.RemoveAt(i - 1);
+                    tempList.Remove(i - 1);
                     i--;
                 }
             }
 
             List<Period> result = new List<Period>();
+            for (int i = 0; i < moneyList.Count; i++)
+            {
+                result.Add(new Period { Date = PeriodsList[i], Money = moneyList[i] });
+            }
 
-            for (int i = 0; i < resultMoneyList.Count; i++)
-                result.Add(
-                    new Period { Date = resultDateList[i], Money = resultMoneyList[i] });
-
-            TempWoorkBook.Close(false);
-            TempImportExcel.Quit();
-            TempImportExcel = null;
-            TempWoorkBook = null;
-            TempWorkSheet = null;
-            GC.Collect();
             return result;
         }
 
-        private Excel.Range findCell(int row, int column) =>
-            TempWorkSheet.Cells[TempWorkSheet.Cells[row, column].MergeArea.Row,
-                TempWorkSheet.Cells[row, column].MergeArea.Column];
+        private void CreatePeriodList()
+        {
+            PeriodsList = new List<DateTime>();
+            ColumnsPeriodsList = new List<int>();
+            for (int i = 0; findCell(CountingLine - 1, CountingColumn + i).Value != null; i++)
+            {
+                DateTime newDate = findDate(findCell(CountingLine - 1, CountingColumn + i));
+                if (newDate.Year != 2)
+                {
+                    PeriodsList.Add(newDate);
+                    ColumnsPeriodsList.Add(CountingColumn + i);
+                }
+            }
+            SupplementYears(PeriodsList);
+        }
 
-        private int findMounth(Excel.Range period)
+        private Excel.Range findCell(int row, int column) =>
+            TempImportExcel.Cells[TempImportExcel.Cells[row, column].MergeArea.Row,
+                TempImportExcel.Cells[row, column].MergeArea.Column];
+
+        private DateTime findDate(Excel.Range period)
         {
             if (period.Value.GetType() == typeof(DateTime))
-                return period.Value.Month;
+                return period.Value;
             else if (period.Value.GetType() == typeof(string))
             {
                 var month = from temp in monthList
@@ -121,24 +141,52 @@ namespace FuncionalPTD.FunctionalClasses
                             + ((monthList.IndexOf(temp) + 1) % 2 == 0 ? 0 : 1);
                 if (month.Count() != 0)
                 {
-                    return month.Last();
+                    return new DateTime(1, month.Last(), 1);
                 }
             }
-            return -1;
+            return new DateTime(2, 1, 1);
         }
 
-        private int findYear(Excel.Range period)
+        private void SupplementYears(List<DateTime> periods)
         {
-            int newRow = TempWorkSheet.Cells[period.MergeArea.Row - 1, period.Column].MergeArea.Row;
-            int newColumn = TempWorkSheet.Cells[newRow, period.Column].MergeArea.Column;
-            Regex regex = new Regex("[0-9]");
-            string[] strSplit = TempWorkSheet.Cells[newRow, newColumn].Text.Split(' ');
-            foreach (var temp in strSplit)
+            int firstYearInList = 1;
+            foreach (DateTime temp in periods)
             {
-                if (regex.IsMatch(temp) && temp.Length == 4)
-                    return int.Parse(temp);
+                if (temp.Year != 1)
+                {
+                    firstYearInList = temp.Year;
+                    for (int i = periods.IndexOf(temp); i != 0; i--)
+                        if (periods[i].Month == 12 && i + 1 < periods.Count - 1 && periods[i + 1].Month != 12)
+                            firstYearInList--;
+                    break;
+                }
             }
-            return 0;
+
+            bool IsOneDecember = true;
+            for (int i = 0; i < periods.Count; i++)
+            {
+                if (periods[i].Year == 1)
+                    periods[i] = new DateTime(firstYearInList, periods[i].Month, 1);
+                if (periods[i].Month == 12 && IsOneDecember && i + 1 < periods.Count - 1 && periods[i + 1].Month != 12)
+                {
+                    firstYearInList++;
+                    IsOneDecember = false;
+                }
+                else if (periods[i].Month != 12) IsOneDecember = true;
+            }
+        }
+
+        private Excel.Range findLeftTopCell()
+        {
+            int lineIndex = 1, columnIndex = 1;
+            for (lineIndex = 1; ; lineIndex++)
+            {
+                for (columnIndex = 1; columnIndex <= 5; columnIndex++)
+                {
+                    if (TempImportExcel.Cells[lineIndex, columnIndex].Text.Trim() == "1")
+                        return TempImportExcel.Cells[lineIndex, columnIndex];
+                }
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace FuncionalPTD.FunctionalInterfaces.Behaviors
 {
@@ -17,6 +18,6 @@ namespace FuncionalPTD.FunctionalInterfaces.Behaviors
         /// <param name="path"></param>
         /// <param name="workTitle"></param>
         /// <returns></returns>
-        string FindAllocMoney(string path, int index);
+        decimal FindAllocMoney(Excel.Application TempImportExcel, int index);
     }
 }

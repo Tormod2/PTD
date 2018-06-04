@@ -9,36 +9,32 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace FuncionalPTD.FunctionalClasses
 {
     /// <summary>
-    /// класс нахождения названия компании в Excel-файле субподрядчика
+    /// класс нахождения выделенных на работу денег субподрядчика
     /// </summary>
-    public class FindExcelTitleSubcontr : FindTitleBehavior
+    public class FindExcelAllocMoneySubcontr : FindAllocMoneyBehavior
     {
         private int CountingLine { get; set; }
         private int CountingColumn { get; set; }
 
         private Excel.Application TempImportExcel { get; set; }
 
-        /// <summary>
-        /// метод нахождения названия компании в Excel-файле генподрядчика
-        /// </summary>
-        /// <returns></returns>
-        public string FindTitle(Excel.Application TempImportExcel, int index)
+        public decimal FindAllocMoney(Excel.Application TempImportExcel, int index)
         {
-            if (CountingColumn == 0 || CountingLine == 0)
+            if (this.TempImportExcel == null)
+                this.TempImportExcel = TempImportExcel;
+            if (CountingLine == 0 || CountingColumn == 0)
             {
-                if (this.TempImportExcel == null)
-                    this.TempImportExcel = TempImportExcel;
-
                 Excel.Range leftTopCell = findLeftTopCell();
-                CountingLine = leftTopCell.Row + 1;
-                CountingColumn = leftTopCell.Column + 2;
+                CountingLine = leftTopCell.Row;
+                CountingColumn = leftTopCell.Column + 3;
 
-                for (int i = 1;
-                    TempImportExcel.Cells[leftTopCell.Row + i, leftTopCell.Column].Text.Trim() != "1"; i++)
+                for (int i = 1; TempImportExcel.Cells[CountingLine + 1, leftTopCell.Column].Text.Trim() != "1"; i++)
                     CountingLine++;
             }
 
-            string Return = TempImportExcel.Cells[findIndexLine(index), CountingColumn].Text;
+            decimal Return = 0;
+            if (TempImportExcel.Cells[findIndexLine(index), CountingColumn].Value != null)
+                Return = TempImportExcel.Cells[findIndexLine(index), CountingColumn].Value;
             return Return;
         }
 
@@ -61,7 +57,7 @@ namespace FuncionalPTD.FunctionalClasses
             while (index != 0)
             {
                 resultIndex++;
-                if (TempImportExcel.Cells[resultIndex, CountingColumn - 1].Value != null)
+                if (TempImportExcel.Cells[resultIndex, CountingColumn - 2].Value != null)
                     index--;
             }
             return resultIndex;

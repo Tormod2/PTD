@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using FuncionalPTD.FunctionalInterfaces;
 using FuncionalPTD.FunctionalInterfaces.Behaviors;
+using DomainPTD.DomainClasses;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace FuncionalPTD.FunctionalClasses
 {
@@ -21,7 +23,7 @@ namespace FuncionalPTD.FunctionalClasses
         {
             FindTitleBehavior = new FindExcelTitleContr();
             FindPeriodListBehavior = new FindExcelPeriodListContr();
-            FindAllocMoneyBehavior = new ExcelFindAllocMoneyContr();
+            FindAllocMoneyBehavior = new FindExcelAllocMoneyContr();
         }
 
         /// <summary>
@@ -30,9 +32,9 @@ namespace FuncionalPTD.FunctionalClasses
         /// <param name="path"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        public string FindTitle(string path, int index)
+        public string FindTitle(Excel.Application TempImportExcel, int index)
         {
-            return "";
+            return FindTitleBehavior.FindTitle(TempImportExcel, index);
         }
 
         /// <summary>
@@ -41,9 +43,9 @@ namespace FuncionalPTD.FunctionalClasses
         /// <param name="path"></param>
         /// <param name="workTitle"></param>
         /// <returns></returns>
-        public List<string> FindPeriodList(string path, string workTitle)
+        public List<Period> FindPeriodList(Excel.Application TempImportExcel, int index)
         {
-            return new List<string>();
+            return FindPeriodListBehavior.FindPeriodList(TempImportExcel, index);
         }
 
         /// <summary>
@@ -52,9 +54,9 @@ namespace FuncionalPTD.FunctionalClasses
         /// <param name="path"></param>
         /// <param name="work"></param>
         /// <returns></returns>
-        public string FindAllocMoney(string path, string work)
+        public decimal FindAllocMoney(Excel.Application TempImportExcel, int index)
         {
-            return "";
+            return FindAllocMoneyBehavior.FindAllocMoney(TempImportExcel, index);
         }
     }
 }

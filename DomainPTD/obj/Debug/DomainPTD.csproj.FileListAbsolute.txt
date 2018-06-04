@@ -20,3 +20,14 @@ C:\Users\Владимир\Documents\PTD\DomainPTD\obj\Debug\DomainPTD.csprojReso
 C:\Users\Владимир\Documents\PTD\DomainPTD\obj\Debug\DomainPTD.csproj.CoreCompileInputs.cache
 C:\Users\Владимир\Documents\PTD\DomainPTD\obj\Debug\DomainPTD.dll
 C:\Users\Владимир\Documents\PTD\DomainPTD\obj\Debug\DomainPTD.pdb
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\DomainPTD.dll.config
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\DomainPTD.dll
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\DomainPTD.pdb
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\EntityFramework.dll
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\EntityFramework.xml
+C:\Users\Heln\Desktop\PTD\DomainPTD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Heln\Desktop\PTD\DomainPTD\obj\Debug\DomainPTD.csprojResolveAssemblyReference.cache
+C:\Users\Heln\Desktop\PTD\DomainPTD\obj\Debug\DomainPTD.csproj.CoreCompileInputs.cache
+C:\Users\Heln\Desktop\PTD\DomainPTD\obj\Debug\DomainPTD.dll
+C:\Users\Heln\Desktop\PTD\DomainPTD\obj\Debug\DomainPTD.pdb

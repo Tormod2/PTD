@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FuncionalPTD.FunctionalClasses;
 using DomainPTD.DomainClasses;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PTDProject
 {
@@ -12,13 +13,31 @@ namespace PTDProject
     {
         static void Main(string[] args)
         {
-            FindExcelPeriodListContr find = new FindExcelPeriodListContr();
-            List<Period> list = find.FindPeriodList(@"H:\ИК22 факт выполнение согл договора ГП на 07.11.2017.xlsx", 36);
-            foreach(var temp in list)
+            Excel.Application TempImportExcel = new Excel.Application(); ;
+            Excel.Workbook TempWoorkBook =
+                TempImportExcel.Application.Workbooks.Open(@"H:/ИК22 факт выполнение согл договора ГП на 07.11.2017.xlsx");
+            Excel.Worksheet TempWorkSheet = TempWoorkBook.Worksheets.get_Item(1);
+            TempImportExcel.DisplayAlerts = false;
+            FindExcelTitleContr find = new FindExcelTitleContr();
+            FindExcelPeriodListContr findPeriod = new FindExcelPeriodListContr();
+            FindExcelAllocMoneyContr findMoney = new FindExcelAllocMoneyContr();
+            for (int i = 1; i < 10; i++)
             {
-                Console.WriteLine(temp.Date.ToString() + " " + temp.Money.ToString());
+                Console.WriteLine(find.FindTitle(TempImportExcel, i));
+                Console.WriteLine(findMoney.FindAllocMoney(TempImportExcel, i));
+                Console.WriteLine();
+                foreach (var temp in findPeriod.FindPeriodList(TempImportExcel, i))
+                {
+                    Console.WriteLine(temp.Date + " " + temp.Money);
+                }
             }
             Console.ReadKey();
+            TempWoorkBook.Close(false);
+            TempImportExcel.Quit();
+            TempImportExcel = null;
+            TempWoorkBook = null;
+            TempWorkSheet = null;
+            GC.Collect();
         }
     }
 }
