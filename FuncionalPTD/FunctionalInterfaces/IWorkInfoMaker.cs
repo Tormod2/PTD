@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainPTD.DomainClasses;
+using Excel=Microsoft.Office.Interop.Excel;
 
 namespace FuncionalPTD.FunctionalInterfaces
 {
@@ -17,6 +18,6 @@ namespace FuncionalPTD.FunctionalInterfaces
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        Work MakeInfo(string path, int index);
+        Work MakeInfoWork(Excel.Application TempImportExcel, int index);
     }
 }

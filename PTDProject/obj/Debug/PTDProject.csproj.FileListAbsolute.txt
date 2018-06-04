@@ -67,3 +67,21 @@ C:\Users\Heln\Desktop\PTD\PTDProject\obj\Debug\PTDProject.csproj.CoreCompileInpu
 C:\Users\Heln\Desktop\PTD\PTDProject\obj\Debug\PTDProject.exe
 C:\Users\Heln\Desktop\PTD\PTDProject\obj\Debug\PTDProject.pdb
 C:\Users\Heln\Desktop\PTD\PTDProject\obj\Debug\PTDProject.csproj.ResolveComReference.cache
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\obj\Debug\PTDProject.csprojResolveAssemblyReference.cache
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\obj\Debug\PTDProject.csproj.ResolveComReference.cache
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\obj\Debug\PTDProject.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\obj\Debug\PTDProject.exe
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\obj\Debug\PTDProject.pdb
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\PTDProject.exe.config
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\PTDProject.exe
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\PTDProject.pdb
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\DomainPTD.dll
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\EntityFramework.dll
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\FuncionalPTD.dll
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\DomainPTD.pdb
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\DomainPTD.dll.config
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\FuncionalPTD.pdb
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\FuncionalPTD.dll.config
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\EntityFramework.xml
+C:\Users\Андрей\Desktop\Новая папка (2)\PTD\PTDProject\bin\Debug\EntityFramework.SqlServer.xml

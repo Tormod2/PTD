@@ -15,22 +15,13 @@ namespace PTDProject
         {
             Excel.Application TempImportExcel = new Excel.Application(); ;
             Excel.Workbook TempWoorkBook =
-                TempImportExcel.Application.Workbooks.Open(@"H:/ИК22 факт выполнение согл договора ГП на 07.11.2017.xlsx");
+            TempImportExcel.Application.Workbooks.Open(@"C:\Users\Андрей\Desktop\Ik22_Fakt_Vypolnenie_Sogl_Dogovora_Gp_Na_07_11_2017 (2).xlsx");
             Excel.Worksheet TempWorkSheet = TempWoorkBook.Worksheets.get_Item(1);
             TempImportExcel.DisplayAlerts = false;
-            FindExcelTitleContr find = new FindExcelTitleContr();
-            FindExcelPeriodListContr findPeriod = new FindExcelPeriodListContr();
-            FindExcelAllocMoneyContr findMoney = new FindExcelAllocMoneyContr();
-            for (int i = 1; i < 10; i++)
-            {
-                Console.WriteLine(find.FindTitle(TempImportExcel, i));
-                Console.WriteLine(findMoney.FindAllocMoney(TempImportExcel, i));
-                Console.WriteLine();
-                foreach (var temp in findPeriod.FindPeriodList(TempImportExcel, i))
-                {
-                    Console.WriteLine(temp.Date + " " + temp.Money);
-                }
-            }
+            CASExcelContrWorkInfoMaker Legion = new CASExcelContrWorkInfoMaker();
+            Work work = Legion.MakeInfoWork(TempImportExcel, 1);
+            Console.WriteLine(work.Title + ' ' + work.AllocMoney);
+            foreach (var temp in work.PeriodList) { Console.WriteLine(temp.Date + " " + temp.Money); }
             Console.ReadKey();
             TempWoorkBook.Close(false);
             TempImportExcel.Quit();

@@ -33,7 +33,7 @@ namespace FuncionalPTD.FunctionalClasses
             }
             decimal Return = 0;
             if (TempImportExcel.Cells[CountingLine + index, CountingColumn].Value != null)
-                Return = TempImportExcel.Cells[CountingLine + index, CountingColumn].Value;
+                Return = (decimal)TempImportExcel.Cells[CountingLine + index, CountingColumn].Value;
             return Return;
         }
 
